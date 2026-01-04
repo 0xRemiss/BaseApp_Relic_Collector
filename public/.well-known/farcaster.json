@@ -1,0 +1,26 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjkxMiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDcwN2U4MkM2ODhCNDcwQzU2RDk4MjhEOTc0M2Y0YzZkZTI4MUE1REMifQ",
+        "payload": "eyJkb21haW4iOiJleGFtcGxlLmNvbSJ9",
+        "signature": "MHhkMDFlZmM..."
+    },
+    "frame": {
+        "version": "1",
+        "name": "Base Mini App Game",
+        "iconUrl": "https://placehold.co/200x200/8b5cf6/ffffff?text=Icon",
+        "homeUrl": "https://example.com",
+        "splashImageUrl": "https://placehold.co/600x400/0a0a0a/ffffff?text=Loading",
+        "splashBackgroundColor": "#0a0a0a",
+        "webhookUrl": "https://example.com/api/webhook"
+    },
+    "triggers": [
+        {
+            "type": "cast",
+            "action": {
+                "type": "launch_frame",
+                "name": "Play Game",
+                "url": "https://example.com/"
+            }
+        }
+    ]
+}

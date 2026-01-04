@@ -1,0 +1,55 @@
+:root {
+  --color-bg: #0a0a0a;
+  --color-surface: #121212;
+  --color-surface-hover: #1e1e1e;
+  --color-border: #2a2a2a;
+  --color-primary: #8b5cf6;
+  --color-primary-glow: rgba(139, 92, 246, 0.5);
+  --color-text-main: #ffffff;
+  --color-text-muted: #a1a1aa;
+  
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* Utilities */
+.glass {
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
