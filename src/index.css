@@ -1,18 +1,23 @@
 :root {
-  --color-bg: #0a0a0a;
-  --color-surface: #121212;
-  --color-surface-hover: #1e1e1e;
-  --color-border: #2a2a2a;
+  --color-bg: #0B0E14;
+  /* Near-black, slightly blue-toned */
+  --color-surface: #141826;
+  /* Slightly lighter dark */
+  --color-surface-hover: #1c2236;
+  --color-border: #232942;
   --color-primary: #8b5cf6;
-  --color-primary-glow: rgba(139, 92, 246, 0.5);
-  --color-text-main: #ffffff;
-  --color-text-muted: #a1a1aa;
-  
+  /* Muted purple/violet (keep as base, but ensure usage is subtle) */
+  --color-primary-muted: rgba(139, 92, 246, 0.6);
+  --color-text-main: #f0f0f0;
+  /* Avoid pure white */
+  --color-text-muted: rgba(240, 240, 240, 0.6);
+
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  
+
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 16px;
+  /* Slightly larger for modern feel */
+  --radius-lg: 24px;
 }
 
 * {
@@ -33,23 +38,31 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: var(--radius-sm);
 }
 
 /* Utilities */
+/* Utilities */
 .glass {
-  background: rgba(18, 18, 18, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(20, 24, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+  background: linear-gradient(135deg, #f0f0f0 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.safe-pb {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
 }

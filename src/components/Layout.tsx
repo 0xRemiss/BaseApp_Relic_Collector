@@ -14,49 +14,54 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     ];
 
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-purple-500/30 font-sans pb-24">
-            {/* Background Ambience */}
+        <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text-main)] font-sans antialiased pb-32">
+            {/* Background Ambience (Subtle) */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/20 blur-[120px] rounded-full" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/20 blur-[120px] rounded-full" />
+                <div className="absolute top-[-20%] left-[-20%] w-[70%] h-[70%] bg-purple-900/5 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] bg-indigo-950/10 blur-[120px] rounded-full" />
             </div>
 
             {/* Main Content */}
-            <main className="relative z-10 p-4 max-w-md mx-auto">
-                <header className="flex items-center justify-between mb-8 pt-2">
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
-                            <Gem size={18} className="text-white" />
-                        </div>
-                        <span className="font-bold text-lg tracking-tight">ECHOES</span>
+            <main className="relative z-10 p-5 max-w-md mx-auto flex flex-col min-h-screen">
+                <header className="flex items-center justify-between mb-10 pt-4">
+                    <div>
+                        <span className="font-semibold text-xl tracking-tight text-white/90">RELIC</span>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         {isSDKLoaded && (
-                            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" title="Farcaster Connected" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.4)]" title="Connected" />
                         )}
-                        <div className="px-3 py-1 rounded-full glass text-xs font-medium text-purple-200">
+                        <span className="text-[10px] font-medium tracking-widest uppercase text-white/40">
                             Season 1
-                        </div>
+                        </span>
                     </div>
                 </header>
 
-                {children}
+                <div className="flex-1">
+                    {children}
+                </div>
             </main>
 
             {/* Bottom Navigation */}
-            <nav className="fixed bottom-0 left-0 right-0 z-50 glass border-t border-white/10 pb-safe">
-                <div className="max-w-md mx-auto flex items-center justify-around h-16">
+            <nav className="fixed bottom-0 left-0 right-0 z-50 glass border-t border-white/5 safe-pb">
+                <div className="max-w-md mx-auto flex items-center justify-around h-[72px]">
                     {navItems.map((item) => {
                         const isActive = location.pathname === item.path;
                         return (
                             <Link
                                 key={item.path}
                                 to={item.path}
-                                className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${isActive ? 'text-purple-400' : 'text-gray-500 hover:text-gray-300'}`}
-                            >
-                                <item.icon size={20} strokeWidth={isActive ? 2.5 : 2} />
-                                <span className="text-[10px] font-medium">{item.label}</span>
+                                className={`flex flex-col items-center justify-center w-full h-full gap-1.5 transition-all duration-300 group`}>
+                                <div className={`relative p-1 transition-all ${isActive ? 'text-[var(--color-primary)]' : 'text-white/30 group-hover:text-white/50'}`}>
+                                    <item.icon size={22} strokeWidth={isActive ? 2 : 1.5} />
+                                    {isActive && (
+                                        <div className="absolute inset-0 bg-purple-500/20 blur-lg rounded-full opacity-50" />
+                                    )}
+                                </div>
+                                <span className={`text-[9px] font-medium tracking-wide uppercase transition-colors ${isActive ? 'text-white/90' : 'text-white/20'}`}>
+                                    {item.label}
+                                </span>
                             </Link>
                         )
                     })}
