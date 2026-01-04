@@ -8,10 +8,10 @@
         "version": "1",
         "name": "Base Mini App Game",
         "iconUrl": "https://placehold.co/200x200/8b5cf6/ffffff?text=Icon",
-        "homeUrl": "https://example.com",
+        "homeUrl": "https://base-app-relic-collector-o2vq-m4d6jbt67-remiss-projects.vercel.app/",
         "splashImageUrl": "https://placehold.co/600x400/0a0a0a/ffffff?text=Loading",
         "splashBackgroundColor": "#0a0a0a",
-        "webhookUrl": "https://example.com/api/webhook"
+        "webhookUrl": "https://base-app-relic-collector-o2vq-m4d6jbt67-remiss-projects.vercel.app/api/webhook"
     },
     "triggers": [
         {
@@ -19,7 +19,7 @@
             "action": {
                 "type": "launch_frame",
                 "name": "Play Game",
-                "url": "https://example.com/"
+                "url": "https://base-app-relic-collector-o2vq-m4d6jbt67-remiss-projects.vercel.app/"
             }
         }
     ]
