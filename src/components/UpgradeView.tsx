@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useGame } from '../context/GameContext';
 import { Relic } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';

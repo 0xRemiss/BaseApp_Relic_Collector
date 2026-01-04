@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useGame } from '../context/GameContext';
-import { CheckCircle2, RotateCcw } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export const PuzzleView = ({ onClose }: { onClose: () => void }) => {
     const { completePuzzle } = useGame();
@@ -49,8 +49,8 @@ export const PuzzleView = ({ onClose }: { onClose: () => void }) => {
                             onClick={() => handleTileClick(num)}
                             disabled={sequence.includes(num) || completed}
                             className={`aspect-square rounded-xl flex items-center justify-center text-2xl font-bold transition-all ${sequence.includes(num)
-                                    ? 'bg-green-500 text-black scale-95 opacity-50'
-                                    : 'bg-white/10 text-white hover:bg-white/20 active:scale-90'
+                                ? 'bg-green-500 text-black scale-95 opacity-50'
+                                : 'bg-white/10 text-white hover:bg-white/20 active:scale-90'
                                 }`}
                         >
                             {completed ? <CheckCircle2 /> : num}

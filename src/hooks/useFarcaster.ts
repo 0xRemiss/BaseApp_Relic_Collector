@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import sdk, { type Context } from "@farcaster/frame-sdk";
+import sdk, { type FrameContext } from "@farcaster/frame-sdk";
 
 export function useFarcaster() {
     const [isSDKLoaded, setIsSDKLoaded] = useState(false);
-    const [context, setContext] = useState<Context.FrameContext>();
+    const [context, setContext] = useState<FrameContext>();
 
     useEffect(() => {
         const load = async () => {

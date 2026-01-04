@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useGame } from '../context/GameContext';
-import { Clock, flame, Zap } from 'lucide-react';
-import { RelicLevel, Relic } from '../types';
+import { Clock, Flame } from 'lucide-react';
+import { Relic } from '../types';
 
 const RelicCard = ({ relic }: { relic: Relic }) => {
     const levelColors = {
@@ -29,9 +29,9 @@ export const Dashboard = () => {
         return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     };
 
-    const [timeLeft, setTimeLeft] = React.useState(timeUntilClaim);
+    const [timeLeft, setTimeLeft] = useState(timeUntilClaim);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(Math.max(0, timeLeft - 1000));
         }, 1000);
@@ -39,7 +39,7 @@ export const Dashboard = () => {
     }, [timeLeft]);
 
     // Sync if context updates
-    React.useEffect(() => {
+    useEffect(() => {
         setTimeLeft(timeUntilClaim);
     }, [timeUntilClaim]);
 

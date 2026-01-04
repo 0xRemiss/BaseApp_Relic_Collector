@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useEffect, ReactNode } from 'react';
 import { GameState, INITIAL_STATE, Relic, RelicLevel } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 

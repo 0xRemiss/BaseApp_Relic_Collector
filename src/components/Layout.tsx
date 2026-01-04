@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, ArrowUpCircle, Users, Share2, Gem } from 'lucide-react';
+import { Home, ArrowUpCircle, Users, Gem } from 'lucide-react';
 import { useFarcaster } from '../hooks/useFarcaster'; // Ensure this matches actual file path
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {

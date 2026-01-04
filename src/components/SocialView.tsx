@@ -1,6 +1,5 @@
-import React from 'react';
 import { useGame } from '../context/GameContext';
-import { Copy, Gift } from 'lucide-react';
+import { Copy } from 'lucide-react';
 
 export const SocialView = () => {
     const { state, claimSocialBonus } = useGame();
