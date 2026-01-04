@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useGame } from '../context/GameContext';
-import { Clock } from 'lucide-react';
 import { Relic } from '../types';
 
 const RelicCard = ({ relic }: { relic: Relic }) => {

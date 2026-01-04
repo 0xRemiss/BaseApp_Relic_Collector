@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useGame } from '../context/GameContext';
 import { Relic } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
 
 export const UpgradeView = () => {
     const { state, upgradeRelics } = useGame();
